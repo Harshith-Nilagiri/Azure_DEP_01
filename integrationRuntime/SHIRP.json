@@ -1,0 +1,7 @@
+{
+	"name": "SHIRP",
+	"properties": {
+		"type": "SelfHosted",
+		"description": "self hosted integration runtime to connect to the DEP1 on-site data"
+	}
+}
