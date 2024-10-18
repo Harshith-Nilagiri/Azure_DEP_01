@@ -7,7 +7,7 @@
 			"server": "CHITTI",
 			"database": "AdventureWorksLT2022",
 			"encrypt": "mandatory",
-			"trustServerCertificate": false,
+			"trustServerCertificate": true,
 			"authenticationType": "SQL",
 			"userName": "p1admin",
 			"password": {
