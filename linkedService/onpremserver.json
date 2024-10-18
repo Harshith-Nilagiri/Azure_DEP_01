@@ -16,7 +16,8 @@
 					"referenceName": "AzureKeyVault1",
 					"type": "LinkedServiceReference"
 				},
-				"secretName": "password"
+				"secretName": "password",
+				"secretVersion": "3215a720661f448cad923b520e06cca4"
 			}
 		},
 		"connectVia": {
