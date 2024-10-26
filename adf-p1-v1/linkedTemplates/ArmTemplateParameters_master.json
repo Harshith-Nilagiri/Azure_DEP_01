@@ -23,6 +23,9 @@
 		"onpremserver_properties_typeProperties_userName": {
 			"value": "p1admin"
 		},
+		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+			"value": "1019-014907-humk80zm"
+		},
 		"containerUri": {
 			"value": ""
 		},
