@@ -112,6 +112,62 @@
 						}
 					]
 				}
+			},
+			{
+				"name": "bronze to silver",
+				"description": "Data transformation - Date",
+				"type": "DatabricksNotebook",
+				"dependsOn": [
+					{
+						"activity": "ForEachScTable",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Shared/bronze_to_silver"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureDatabricks1",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "silver to gold",
+				"description": "data transformation - column names",
+				"type": "DatabricksNotebook",
+				"dependsOn": [
+					{
+						"activity": "bronze to silver",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Shared/silver_to_gold"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureDatabricks1",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"annotations": []
