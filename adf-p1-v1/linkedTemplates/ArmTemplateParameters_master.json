@@ -11,6 +11,9 @@
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "https://dep1datalekegen21.dfs.core.windows.net/"
 		},
+		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+			"value": "1019-014907-humk80zm"
+		},
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
 			"value": "https://kv-p1-v1.vault.azure.net/"
 		},
@@ -22,9 +25,6 @@
 		},
 		"onpremserver_properties_typeProperties_userName": {
 			"value": "p1admin"
-		},
-		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
-			"value": "1019-014907-humk80zm"
 		},
 		"containerUri": {
 			"value": ""
