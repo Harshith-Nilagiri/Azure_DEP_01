@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"workspaceName": {
+			"value": "syn1-p1-v1"
+		},
+		"syn1-p1-v1-WorkspaceDefaultSqlServer_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:syn1-p1-v1.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
+		"serverlessSQL_db_properties_typeProperties_server": {
+			"value": "syn1-p1-v1-ondemand.sql.azuresynapse.net"
+		},
+		"serverlessSQL_db_properties_typeProperties_database": {
+			"value": "p1_db"
+		},
+		"syn1-p1-v1-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://dep1datalekegen21.dfs.core.windows.net"
+		}
+	}
+}
