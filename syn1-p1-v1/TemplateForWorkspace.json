@@ -265,6 +265,20 @@
 				"type": "SqlQuery"
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/PowerBIWorkspace1')]",
+			"type": "Microsoft.Synapse/workspaces/linkedServices",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"annotations": [],
+				"type": "PowerBIWorkspace",
+				"typeProperties": {
+					"workspaceID": "ADEP1",
+					"tenantID": "3c461382-74b4-4557-b5fc-34b33003c0c8"
+				}
+			},
+			"dependsOn": []
 		}
 	]
 }
