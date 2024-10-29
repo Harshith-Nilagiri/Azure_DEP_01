@@ -1,0 +1,17 @@
+{
+	"name": "sp_CreateSQLServerlessView_gold",
+	"properties": {
+		"content": {
+			"query": "USE p1_db\nGO\n\nCREATE OR ALTER PROC CreateSQLServerlessView_gold @ViewName nvarchar(100)\nAS\nBEGIN\n\nDECLARE @statement VARCHAR(MAX)\n\n    SET @statement = N'CREATE OR ALTER VIEW ' + @ViewName + ' AS\n        SELECT *\n        FROM\n            OPENROWSET(\n            BULK ''https://dep1datalekegen21.dfs.core.windows.net/gold/SalesLT/' + @ViewName + '/'',\n            FORMAT = ''DELTA''\n        ) AS [result]\n    '\n\nEXEC (@statement)\n\nEND\nGO",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "p1_db",
+				"poolName": "Built-in"
+			},
+			"resultLimit": -1
+		},
+		"type": "SqlQuery"
+	}
+}
