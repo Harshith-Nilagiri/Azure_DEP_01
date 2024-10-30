@@ -16,12 +16,12 @@
 			"recurrence": {
 				"frequency": "Day",
 				"interval": 1,
-				"startTime": "2024-10-30T13:25:00",
+				"startTime": "2024-10-30T13:42:00",
 				"endTime": "2024-11-01T18:20:00",
 				"timeZone": "Central Standard Time",
 				"schedule": {
 					"minutes": [
-						40
+						45
 					],
 					"hours": [
 						13
