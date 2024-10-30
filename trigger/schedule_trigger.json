@@ -1,0 +1,24 @@
+{
+	"name": "schedule_trigger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "copy_all_tables_p1",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 10,
+				"startTime": "2024-10-31T13:12:00",
+				"timeZone": "Central Standard Time"
+			}
+		}
+	}
+}
