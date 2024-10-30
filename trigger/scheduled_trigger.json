@@ -14,19 +14,11 @@
 		"type": "ScheduleTrigger",
 		"typeProperties": {
 			"recurrence": {
-				"frequency": "Day",
-				"interval": 1,
-				"startTime": "2024-10-30T13:42:00",
+				"frequency": "Minute",
+				"interval": 5,
+				"startTime": "2024-10-30T13:50:00",
 				"endTime": "2024-11-01T18:20:00",
-				"timeZone": "Central Standard Time",
-				"schedule": {
-					"minutes": [
-						45
-					],
-					"hours": [
-						13
-					]
-				}
+				"timeZone": "Central Standard Time"
 			}
 		}
 	}
