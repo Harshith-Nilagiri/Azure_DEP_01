@@ -584,18 +584,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/SHIRP')]",
-			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"type": "SelfHosted",
-				"description": "self hosted integration runtime to connect to the DEP1 on-site data",
-				"typeProperties": {}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/trigger1')]",
+			"name": "[concat(parameters('factoryName'), '/schedule_trigger')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -614,8 +603,8 @@
 				"typeProperties": {
 					"recurrence": {
 						"frequency": "Minute",
-						"interval": 15,
-						"startTime": "2024-10-30T19:15:00",
+						"interval": 10,
+						"startTime": "2024-10-31T13:12:00",
 						"timeZone": "Central Standard Time"
 					}
 				}
@@ -623,6 +612,17 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/pipelines/copy_all_tables_p1')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SHIRP')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "SelfHosted",
+				"description": "self hosted integration runtime to connect to the DEP1 on-site data",
+				"typeProperties": {}
+			},
+			"dependsOn": []
 		}
 	]
 }
