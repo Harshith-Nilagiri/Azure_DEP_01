@@ -602,27 +602,27 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Minute",
-						"interval": 10,
+						"frequency": "Week",
+						"interval": 1,
 						"startTime": "2024-10-30T14:28:00",
-						"timeZone": "Central Standard Time"
+						"timeZone": "Central Standard Time",
+						"schedule": {
+							"minutes": [
+								1
+							],
+							"hours": [
+								0
+							],
+							"weekDays": [
+								"Sunday"
+							]
+						}
 					}
 				}
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/pipelines/copy_all_tables_p1')]"
 			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/SHIRP')]",
-			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"type": "SelfHosted",
-				"description": "self hosted integration runtime to connect to the DEP1 on-site data",
-				"typeProperties": {}
-			},
-			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/trigger1')]",
@@ -646,14 +646,24 @@
 						"frequency": "Day",
 						"interval": 1,
 						"startTime": "2024-10-30T19:31:00",
-						"timeZone": "Central Standard Time",
-						"schedule": {}
+						"timeZone": "Central Standard Time"
 					}
 				}
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/pipelines/copy_all_tables_p1')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SHIRP')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "SelfHosted",
+				"description": "self hosted integration runtime to connect to the DEP1 on-site data",
+				"typeProperties": {}
+			},
+			"dependsOn": []
 		}
 	]
 }

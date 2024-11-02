@@ -613,10 +613,21 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Minute",
-						"interval": 10,
+						"frequency": "Week",
+						"interval": 1,
 						"startTime": "2024-10-30T14:28:00",
-						"timeZone": "Central Standard Time"
+						"timeZone": "Central Standard Time",
+						"schedule": {
+							"minutes": [
+								1
+							],
+							"hours": [
+								0
+							],
+							"weekDays": [
+								"Sunday"
+							]
+						}
 					}
 				}
 			},
@@ -646,8 +657,7 @@
 						"frequency": "Day",
 						"interval": 1,
 						"startTime": "2024-10-30T19:31:00",
-						"timeZone": "Central Standard Time",
-						"schedule": {}
+						"timeZone": "Central Standard Time"
 					}
 				}
 			},
